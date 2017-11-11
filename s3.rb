@@ -10,15 +10,13 @@ secret_key = ENV['AWS_SECRET_ACCESS_KEY']
 bucket_name = nil
 operation = 'list' # default
 
-### this is positional parameter for bucket_name
-### after ruby s3.rb ARGV[0]
+
 if ARGV.length > 0
   bucket_name = ARGV[0]
 else
   raise "Enter bucket name then action"
 end
-# The operation to perform on the bucket
-### this is positional parameter after ruby s3.rb bucket_name ARGV[1]
+
 operation = ARGV[1] if ARGV.length > 1
 
 
