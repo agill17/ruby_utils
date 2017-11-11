@@ -1,5 +1,5 @@
 require 'aws-sdk'
-require_relative "Constants"
+require_relative "../support/Constants"
 
 
 module S3_Helpers

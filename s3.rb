@@ -1,12 +1,8 @@
 
 require 'aws-sdk'
-require_relative "S3_Helpers"
+require_relative "modules/S3_Helpers"
 
-access_key_id = ENV['AWS_ACCESS_KEY_ID']
-secret_key = ENV['AWS_SECRET_ACCESS_KEY']
 
-# Set the name of the bucket on which the operations are performed
-# This argument is required
 bucket_name = nil
 operation = 'list' # default
 
@@ -29,5 +25,6 @@ when 'list'
   S3_Helpers.list_all_buckets
 
 else
-  puts "Unknown operation: '%s'!" % operation
+  puts "Unknown operation: #{ARGV[1]}"
+  puts "Available operations: create, list"
 end
